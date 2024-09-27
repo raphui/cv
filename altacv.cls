@@ -284,7 +284,7 @@ q
   \endgroup\medskip
 }
 
-\renewenvironment{quote}{\color{accent}\itshape\large}{\par}
+\renewenvironment{quote}{\color{emphasis}\itshape\large}{\par}
 
 \newcommand{\cvsection}[2][]{%
   \nointerlineskip\bigskip%  %% bugfix in v1.6.2
@@ -309,12 +309,12 @@ q
   \ifstrequal{#3}{}{}{%
     {\small\makebox[0.5\linewidth][l]%
       {\BeginAccSupp{method=pdfstringdef,ActualText={\datename:}}\cvDateMarker\EndAccSupp{}%
-      ~#3}%
+      ~\color{trivial}#3}%
     }}%
   \ifstrequal{#4}{}{}{%
     {\small\makebox[0.5\linewidth][l]%
       {\BeginAccSupp{method=pdfstringdef,ActualText={\locationname:}}\cvLocationMarker\EndAccSupp{}%
-        ~#4}%
+	~\color{trivial}#4}%
     }}\par
   \medskip\normalsize
 }
@@ -327,19 +327,27 @@ q
 % v1.7: adds accsupp for the icon as well
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
-  \multirow{2}{*}{\Large\color{accent}\BeginAccSupp{method=escape,ActualText={#1: }}#1\EndAccSupp{}} & \vspace{-0.25em} \bfseries\textcolor{emphasis}{#2}\\
+  \multirow{2}{*}{\Large\color{accent}\BeginAccSupp{method=escape,ActualText={#1: }}#1\EndAccSupp{}} & \vspace{-0.20em} #2\\
   & #3
   \end{tabularx}%
-  \smallskip
+  \medskip
 }
 
 \newcommand{\cvachievementMultiLine}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
-  \multirow{2}{*}{\Large\color{accent}\BeginAccSupp{method=escape,ActualText={#1: }}#1\EndAccSupp{}} & \vspace{-0.25em} \bfseries\textcolor{emphasis}{#2}\\
-  & \bfseries\textcolor{emphasis}{#3}
+  \multirow{2}{*}{\Large\color{accent}\BeginAccSupp{method=escape,ActualText={#1: }}#1\EndAccSupp{}} & \vspace{-0.5em} #2\\
+  & #3
   \end{tabularx}%
-  \smallskip
+  \medskip
 }
+
+\newcommand{\cvachievementOneLine}[2]{%
+  \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
+  \multirow{2}{*}{\Large\color{accent}\BeginAccSupp{method=escape,ActualText={#1: }}#1\EndAccSupp{}} & \vspace{-0.5em} #2
+  \end{tabularx}%
+  \medskip
+}
+
 
 %\newcommand{\cvtag}[1]{%
 %  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};

@@ -41,7 +41,9 @@
 \colorlet{heading}{Blue}
 \colorlet{accent}{Blue}
 \colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
+\colorlet{trivial}{LightGrey}
+%\colorlet{body}{LightGrey}
+\colorlet{body}{SlateGrey}
 \colorlet{bold}{Dark}
 
 % Change the bullets for itemize and rating marker
@@ -64,7 +66,7 @@
   % Contact
   \small\makebox[0.25\linewidth][l]{\email{poggi.raph@gmail.com}}
   \small\makebox[0.25\linewidth][l]{\phone{+44 7 986 919 365}}
- \mailaddress{Camberley, GU15 3LQ, UK}
+ %\mailaddress{Camberley, GU15 3LQ, UK}
   
   % Personal info
 %  \small\makebox[0.25\linewidth][l]{\wedding{Single}}
@@ -94,53 +96,60 @@
 
 \cvevent{Staff Embedded Software Engineer}{IDEX Biometrics}{Nov. 2017 -- Now}{Farnborough, UK/Remote}
 \begin{itemize}
-\item Developed and optimized \textbf{\textcolor{bold}{embedded firmware}} on \textbf{\textcolor{bold}{STM32L4}} and custom ASICs
+\item Developed and optimized \textbf{\textcolor{bold}{embedded firmware}} on \textbf{\textcolor{bold}{STM32L4}} and custom \textbf{\textcolor{bold}{ASICs}}
 \begin{itemize}
-    \item Wrote low-level driver stack
-    \item Develop a robust encrypted firmware update mechanism
-    \item Worked with external partners to port the firmware on other architecture (Cortex-M33)
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
+    \item Wrote \textbf{\textcolor{bold}{low-level driver stack}}
+    \item Develop a \textbf{\textcolor{bold}{robust encrypted firmware update mechanism}}
+    \item Worked with external partners to port the firmware on \textbf{\textcolor{bold}{Cortex-M33}}
     \item Worked with silicon team to enable early support of the firmware on the new ASIC
-    \item Implemented a fault safe storage module
-    \item Developed power management functionality
+    \item Implemented a \textbf{\textcolor{bold}{fault safe}} storage module
+    \item Developed \textbf{\textcolor{bold}{power management}} functionality
 \end{itemize}
-\item Designed a file format to describe default parameters of the device
+\item Designed a \textbf{\textcolor{bold}{file format}} to describe device default parameters.
 \begin{itemize}
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
     \item Designed a file format similar to JSON to describe default parameters
-    \item Modified and used the device tree compiler to produce binary file from the “JSON” file
+    \item Modified and used the \textbf{\textcolor{bold}{device tree compiler}} to produce binary file from the “JSON” file
 \end{itemize}
-\item Developed and debugged \textbf{\textcolor{bold}{custom communications protocols}} over SPI and UART.
+\item Developed and debugged \textbf{\textcolor{bold}{custom communications protocols}}.
 \begin{itemize}
-    \item Developed a custom SPI protocol using 2 wires 
-    \item Added support for ISO/IEC 7816-3 standard protocol
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
+    \item Developed a custom \textbf{\textcolor{bold}{SPI}} protocol using 2 wires 
+    \item Added support for \textbf{\textcolor{bold}{ISO/IEC 7816-3}} standard protocol
 \end{itemize}
-\item Implemented AES driver to enable hardware acceleration
+\item Implemented \textbf{\textcolor{bold}{AES driver}} to enable hardware acceleration
 \begin{itemize}
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
     \item Allowed to enable hardware acceleration of the SCP03 implementation (smartcard secure channel)
-    \item Supported ECB, CBC block cipher
+    \item Supported \textbf{\textcolor{bold}{ECB}}, \textbf{\textcolor{bold}{CBC}}, \textbf{\textcolor{bold}{CMAC}}
 \end{itemize}
 \item Ported and integrated SEGGER SystemView to support house-made kernel.
-\item Created a cache simulator to evaluate and benchmark \textbf{\textcolor{bold}{cache architecture}} efficiency.
+\item Created a \textbf{\textcolor{bold}{cache simulator}} to evaluate and benchmark \textbf{\textcolor{bold}{cache architecture}} efficiency.
 \begin{itemize}
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
     \item Supported direct and N-way associative cache, multiple cache and cache line sizes 
     \item Provided statistics of hits and misses rates
-    \item Allowed to use multiple on file format
-    \item Used traces from data and instruction buses
+    \item Validate against traces from simulation (verilator)
 \end{itemize}
 \item Ported custom ASIC hardware to \textbf{\textcolor{bold}{QEMU}}, enabling continuous integration tests without the dependency on physical hardware.
-\item Collaborated daily with a distributed team (USA, UK, France, Armenia).
+\item Collaborated daily with a \textbf{\textcolor{bold}{distributed team}} (USA, UK, France, Armenia).
 \end{itemize}
 
 \divider
 
 \cvevent{Embedded Software Engineer}{Avalun}{Feb. 2015 -- Oct. 2017}{Grenoble, France}
 \begin{itemize}
-\item Developed and optimized embedded firmware on STM32F429 using \textbf{\textcolor{bold}{FreeRTOS}} and custom driver stack.
+%\fontsize{12pt}{10pt}\selectfont % Set inner list to 10pt
+\item Developed and optimized embedded firmware on \textbf{\textcolor{bold}{STM32F429}} using \textbf{\textcolor{bold}{FreeRTOS}} and custom driver stack.
 \begin{itemize}
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
     \item Wrote the low-level drivers stack (SPI, I2C, Digital Camera Interface (DCMI), LCD, USART, TIMER, ADC, etc.)
     \item Integrated FreeRTOS
 \end{itemize}
 \item Designed and implemented PC control software via USB-CDC using custom script as input (C++/Qt).
 \begin{itemize}
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
     \item Used custom script to describe the commands sent to the device
     \item Allowed the device to act like a slave and export image feeds to the PC
     \item Allowed the biomedical engineering team to develop new medical measures
@@ -148,11 +157,13 @@
 \item UI development in Java using a micro JVM on top of FreeRTOS (MicroEJ – IS2T).
 \item Ported and optimized signal processing algorithms from Scilab/Matlab to C
 \begin{itemize}
-    \item Improved processing efficiency and performance by levering ARMv7M DSP extensions
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
+    \item Improved processing efficiency and performance by leveraging \textbf{\textcolor{bold}{ARMv7M}} DSP extensions
 \end{itemize}
 \item Enhanced datamatrix library (libdmtx) performance, significantly increasing speed.
 \begin{itemize}
-    \item Improved the datamatrix search algorithm speed by tailoring it to our specific case (datamatrix position and orientation in the image, size of the pattern, etc.)
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
+    \item Improved the datamatrix search algorithm speed by tailoring it to our specific case (datamatrix position, orientation, size of the pattern, etc.)
     \item Reduced the memory footprint
 \end{itemize}
 \end{itemize}
@@ -163,20 +174,23 @@
 \begin{itemize}
 \item \textbf{\textcolor{bold}{Linux kernel drivers}} development
 \begin{itemize}
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
     \item Custom spidev driver communicated with an 8-bit microcontroller
-    \item Integrated a V4L2 camera driver to a newer Linux kernel version
+    \item Integrated a \textbf{\textcolor{bold}{V4L2}} camera driver to a newer Linux kernel version
     \item Improved Atmel LCB and ISI drivers to enable unsupport function (preview path)
 \end{itemize}
 \item Prototyped the use of LPDDR deep sleep mode to backup Linux in RAM in sleep mode and get a very fast wakeup from ultra \textbf{\textcolor{bold}{low power}} mode.
 \begin{itemize}
-    \item Saved processor (cpu register, MMU configuration, stack addresses) and drivers state in an external LPDDR.
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
+    \item Saved processor (CPU register, MMU configuration, stack addresses) and drivers state in an external LPDDR.
     \item Power off and used an 8-bit microcontroller to trigger on a wakeup state
     \item Retrieved the saved context, power on the processor and restore its state.
     \item Very fast wakeup time and improved power consumption
 \end{itemize}
-\item Developed a BSP for SAMA5D3 and SAM9M10 Atmel SoC using \textbf{\textcolor{bold}{Buildroot}}, \textbf{\textcolor{bold}{U-Boot}} and \textbf{\textcolor{bold}{Linux  Kernel}}
+\item Developed a \textbf{\textcolor{bold}{BSP}} for SAMA5D3 and SAM9M10 Atmel SoC using \textbf{\textcolor{bold}{Buildroot}}, \textbf{\textcolor{bold}{U-Boot}} and \textbf{\textcolor{bold}{Linux  Kernel}}
 \begin{itemize}
-    \item Maintained and used buildroot to generate the filesystem
+    \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
+    \item Maintained and used Buildroot to generate the filesystem
     \item Maintained U-Boot
 %\begin{itemize}
 %    \item Added missing support for mtd page with 8k pages (in nand\_base.c/atmel\_nand.c)
@@ -186,20 +200,6 @@
 \item Hardware debugging using oscilloscope.
 \item Designed and implemented a streaming audio and video pipeline using Gstreamer.
 \end{itemize}
-
-\divider
-
-%\cveventsingle{Open Source Projects}{}{}{}
-%\marginpar{
-%\medskip
-%%\vspace*{\dimexpr1pt-\baselineskip}
-%\raggedright
-%  \textbf{\textcolor{Orange}{\href{https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=poggi.raph@gmail.com}{Linux Kernel}}}
-%  \begin{itemize}
-%  \item Atmel nand driver improvement for 8K page size nand.
-%  \item Improve error handling in TI wireless driver.
-%  \end{itemize}
-%}
 
 %\iffalse
 % use ONLY \newpage if you want to force a page break for
@@ -213,12 +213,16 @@
 % ABOUT ME
 \cvsection{About Me}
 \begin{quote}
-{\small As a seasoned Embedded Software Engineer with over 10 years of experience, I specialize in low-level systems programming and kernel development. My expertise includes developing and optimizing embedded firmware, designing robust firmware update mechanisms, and actively contributing to open-source projects. I have a strong track record of collaborating with distributed teams to deliver high-performance solutions. I am eager to leverage my skills to contribute to innovative technologies and support the development of secure and efficient systems.}
+{\small As a seasoned Embedded Software Engineer with over 10 years of experience, I specialize in low-level systems programming and software development for embedded systems. My expertise covers the design, development, and optimization of complex software solutions. I have a strong track record of collaborating with distributed teams to deliver high-performance solutions. I am eager to leverage my skills to contribute to innovative technologies and support the development of secure and efficient systems.}
 \end{quote}
+
+\bigskip
 
 % EDUCATION
 \cvsection{Education}
 \cvevent{Master's degree in Computer Science}{SUPINFO}{2013}{Grenoble, France}
+
+\bigskip
 
 % PROGRAMMING SKILLS
 \cvsection{SKILLS}
@@ -232,7 +236,7 @@
 
 \cvachievementMultiLine{\faCogs}{ARMv7M / ARMv8A}{SPI, I2C, I2S, UART}
 
-\cvachievement{\faBug}{Oscilloscope, GDB, Logic Analyzer, JTAG}{}
+\cvachievementOneLine{\faBug}{Oscilloscope, GDB, Logic Analyzer, JTAG}
 
 \cvachievementMultiLine{\faUnlock}{AES (EBC, CBC, CMAC)}{
 	Secure communication protocols (SCP03)\newline
@@ -242,13 +246,55 @@
 
 \cvachievement{\faCodeBranch}{Git, SVN, Atlassian Software suite}{}
 
+\newpage
+
+\cvsection{Open Source}
+\textbf{\textcolor{accent}{\href{https://github.com/raphui/rnk}{rnk}}}
+\begin{itemize}
+\item Open source \textbf{\textcolor{bold}{real-time OS}} targeting Cortex-M4 platforms (especially STM32F4xx/STM32L4xx boards)
+\item Leverage \textbf{\textcolor{bold}{MPU}} and \textbf{\textcolor{bold}{privileged/unprivileged modes}}
+\item Support static and dynamic application, \textbf{\textcolor{bold}{device tree}} and SEGGER SystemView
+\item Support device tree (memory footprint optimized) to describe hardware
+\item Written from scratch
+\end{itemize}
+
+\medskip
+\reversemarginpar 
+\textbf{\textcolor{accent}{\href{https://git.pengutronix.de/cgit/barebox/log/?qt=author&q=poggi.raph@gmail.com}{Barebox - Bootloader}}}
+\begin{itemize}
+\item Add support of \textbf{\textcolor{bold}{ARM64}} architecture
+    \begin{itemize}
+	\fontsize{10pt}{12pt}\selectfont % Set inner list to 10pt
+        \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
+        \item Added the very first support of ARM64 architecture for the project
+        \item Support for MMU 3 levels pagination
+        \item Initial support was done on QEMU Virt machine
+    \end{itemize}
+\item Add support of \textbf{\textcolor{bold}{device tree}} for Atmel SoC drivers
+    \begin{itemize}
+	\fontsize{10pt}{12pt}\selectfont % Set inner list to 10pt
+        \renewcommand{\labelitemii}{-} % Change bullet symbol for inner list
+        \item Added pinctrl and i2c drivers
+    \end{itemize}
+\item Add support of UDOO iMX6 Quad board
+\end{itemize}
+
+\medskip
+\textbf{\textcolor{accent}{\href{https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=poggi.raph@gmail.com}{Linux Kernel}}}
+\begin{itemize}
+\item Atmel nand driver improvement for 8K page size nand.
+\item Improve error handling in TI wireless driver.
+\end{itemize}
+
+\bigskip
+
 % LANGUAGES
 \cvsection{Languages}
 
 \cvskill{French}{5}
 \cvskill{English}{5}
 
-\newpage
+\bigskip
 
 % HOBBIES
 \cvsection{Hobbies}
@@ -258,42 +304,6 @@
 \smallskip
 
 \cvtag{\faLifeRing}{Sports}{\faGlobe}{Travelling}
-
-\cvsection{Open Source}
-\textbf{\textcolor{Orange}{\href{https://github.com/raphui/rnk}{rnk}}}
-\begin{itemize}
-\item Open source \textbf{\textcolor{bold}{real-time OS}} targeting Cortex-M4 platforms (especially STM32F4xx/STM32L4xx boards)
-\item Leverage MPU and privileged/unprivileged modes
-\item Support static and dynamic application, \textbf{\textcolor{bold}{device tree}} and SEGGER SystemView
-\item Support device tree (memory footprint optimized) to describe hardware
-\item Written from scratch
-\end{itemize}
-
-\medskip
-\reversemarginpar 
-\textbf{\textcolor{Orange}{\href{https://git.pengutronix.de/cgit/barebox/log/?qt=author&q=poggi.raph@gmail.com}{Barebox - Bootloader}}}
-\begin{itemize}
-\item Add support of \textbf{\textcolor{bold}{ARM64}} architecture
-    \begin{itemize}
-        \item Added the very first support of ARM64 architecture for the project
-        \item Support for MMU 3 levels pagination
-        \item Initial support was done on QEMU Virt machine
-    \end{itemize}
-\item Add support of \textbf{\textcolor{bold}{device tree}} for Atmel SoC drivers
-    \begin{itemize}
-        \item Added pinctrl and i2c drivers
-    \end{itemize}
-\item Add support of UDOO iMX6 Quad board
-\end{itemize}
-
-\medskip
-\textbf{\textcolor{Orange}{\href{https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/log/?qt=author&q=poggi.raph@gmail.com}{Linux Kernel}}}
-\begin{itemize}
-\item Atmel nand driver improvement for 8K page size nand.
-\item Improve error handling in TI wireless driver.
-\end{itemize}
-
-
 
 \end{paracol}
 
